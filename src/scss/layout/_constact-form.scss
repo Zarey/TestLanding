@@ -1,0 +1,252 @@
+.contact-form {
+    margin-bottom: 86px;
+    position: relative;
+
+    @media (min-width: 768px) {
+        margin-bottom: 114px;
+        min-height: 610px;
+    }
+
+    @media (min-width: 1920px) {
+        margin-bottom: 162px;
+    }
+
+    @media (min-width: 1920px) {
+        display: grid;
+        grid-template-columns: auto 536px;
+        grid-template-areas: "contact-form__image contact-form__form";
+    }
+
+    .contact-form__image {
+        grid-area: contact-form__image;
+        display: block;
+        width: 100%;
+        height: 464px;
+        background-repeat: no-repeat;
+        background-position: left -22px bottom -20px;
+        background-size: 397px;
+        background-image: url(../icons/towers.png);
+
+        margin-top: 78px;
+
+        @media (min-width: 768px) and (max-width: 1920px) {
+            position: absolute;
+            overflow: hidden;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin-top: 0;
+            background-position: right 56px bottom 22px;
+            background-size: 244px 632px;
+            background-image: url(../icons/towers-tablet.svg);
+            &::before {
+                display: block;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-repeat: no-repeat;
+                background-position: right 11px bottom -65px;
+                background-size: 245px;
+                background-image: url(../icons/towers-tablet-pocket.svg);
+            }
+        }
+
+        @media (min-width: 1920px) {
+            background-image: url(../icons/towers.png);
+            height: 1123px;
+            display: block;
+            background-size: 811px;
+            background-position: right -27px bottom -3px;
+        }
+    }
+
+    .contact-form__form {
+        grid-area: contact-form__form;
+        display: block;
+    }
+
+    .contact-form__header {
+        font-family: Onest;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 39.2px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--blue-logo);
+        margin-top: 33px;
+
+        @media (min-width: 768px) {
+            font-size: 47px;
+            font-weight: 500;
+            line-height: 56.4px;
+
+            margin-top: 121px;
+        }
+
+        @media (min-width: 1920px) {
+            font-size: 68px;
+            line-height: 95.2px;
+            max-width: 390px;
+
+            margin-top: 298px;
+        }
+
+        &::after {
+            display: block;
+            content: '';
+            width: 88px;
+            height: 2px;
+            background-color: var(--gold);
+            margin-top: 9px;
+            @media (min-width: 768px) {
+                margin-top: 19px;
+                @media (min-width: 1920px) {
+                    margin-top: 17px;
+                }
+            }
+        }
+    }
+
+    .contact-form__subheader {
+        font-family: Onest;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        letter-spacing: 0.1px;
+        color: var(--blue);
+        margin-top: 12px;
+
+        @media (min-width: 768px) {
+            width: 336px;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 28.8px;
+        }
+
+        @media (min-width: 1920px) {
+            margin-top: 21px;
+            line-height: 33.6px;
+        }
+    }
+
+    .contact-form__input {
+        @media (min-width: 768px) {
+            width: 336px;
+        }
+        @media (min-width: 1920px) {
+            width: 424px;
+        }
+        input {
+            width: 100%;
+            height: 57px;
+            @media (min-width: 768px) {
+                height: 59px;
+            }
+            border-radius: 4px;
+            border: 2px solid var(--gold);
+            padding: 16px 24px 16px 24px;
+            background-color: var(--white);
+
+            font-family: Onest;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 25.2px;
+
+            color: var(--brown-medium);
+
+        }
+
+        &.contact-form__input_first {
+            margin-top: 18px;
+            @media (min-width: 768px) {
+                margin-top: 38px;
+            }
+            @media (min-width: 1920px) {
+                margin-top: 29px;
+            }
+        }
+        &.contact-form__input_second {
+            @media (min-width: 1920px) {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .contact-form__input_error {
+        input {
+            border: 2px solid var(--red);
+        }
+    }
+
+    .contact-form__input-error {
+        display: block;
+        height: 20px;
+        font-family: Onest;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.8px;
+        letter-spacing: .3px;
+        color: var(--red);
+        padding-left: 24px;
+        padding-top: 1px;
+    }
+
+
+
+    .contact-form__button {
+        @media (min-width: 768px) {
+            width: 336px;
+        }
+        @media (min-width: 1920px) {
+            width: 424px;
+            margin-top: 8px;
+        }
+    }
+
+    .contact-form__policy-block {
+        font-family: Onest;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.4px;
+        text-align: center;
+        color: var(--brown-light);
+        
+        a {
+            color: var(--blue-logo);
+            text-decoration: underline;
+            transition: 0.3s;
+            &:hover {
+                color: var(--brown-dark);
+            }        
+        }
+
+
+        @media (min-width: 768px) {
+            width: 336px;
+
+            font-size: 14px;
+            line-height: 16.8px;
+            text-align: left;
+
+            a {
+                line-height: 19.6px;
+            }
+        }
+        @media (min-width: 1920px) {
+            width: 424px;
+        }
+    }
+
+
+
+
+}

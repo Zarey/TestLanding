@@ -1,0 +1,211 @@
+body {
+    background-color: var(--white);
+
+    // test 1000px
+    // min-width: 1000px;
+}
+
+.container-limit {
+    margin-left: auto;
+    margin-right: auto;
+
+    // 360px
+    width: 360px;
+    padding-left: 16px;
+    padding-right: 16px;
+    @media (min-width: 768px) {
+        width: 768px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @media (min-width: 1920px) {
+        width: 1320px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+// без padding
+.container-limit-clean {
+    margin-left: auto;
+    margin-right: auto;
+
+    // 360px
+    width: 360px;
+    padding-left: 16px;
+    padding-right: 16px;
+    @media (min-width: 768px) {
+        width: 768px;
+    }
+    @media (min-width: 1920px) {
+        width: 1320px;
+    }
+}
+
+.anim-button {
+    display: block;
+    position: relative;
+    width: 100%;
+    background-color: var(--blue-logo);
+    border-radius: 8px 25px 9px 8px;
+    height: 64px;
+    margin-top: 31px;
+    @media (min-width: 768px) {
+        height: 56px;
+        margin-top: 27px;
+    }
+    @media (min-width: 1920px) {
+        border-radius: 8px 34px 9px 8px;
+        height: 80px;
+        margin-top: 82px;
+    }
+
+    &::before,
+    &::after {
+        display: block;
+        position: absolute;
+        content: '';
+        transition: 0.5s;
+    }
+    &::after {
+        z-index: 2;
+        right: 8px;
+        top: -6px;
+        width: 38px;
+        height: 52px;
+        background-repeat: no-repeat;
+        background-image: url(../icons/arrow.svg);
+        background-size: 38px 52px;
+        @media (min-width: 1920px) {
+            background-image: url(../icons/arrow72x52.svg);
+            right: 15px;
+            top: -6px;
+            width: 52px;
+            height: 72px;
+            background-size: 52px 72px;
+        }
+    }
+    &:hover {
+        &::after {
+            right: 14px;
+            @media (min-width: 1920px) {
+                right: 38px;
+            }
+        }
+    }
+
+    .anim-button__content {
+        z-index: 1;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding-right: 64px;
+        @media (min-width: 768px) {
+            padding-right: 56px;
+        }
+        @media (min-width: 1920px) {
+            padding-right: 80px;
+        }
+        color: var(--white);
+        height: 100%;
+        border-radius: 8px 0 0 8px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Onest;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 1.2;
+
+        @media (min-width: 1920px) {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        &::before {
+            z-index: -1;
+            position: absolute;
+            display: block;
+            content: '';
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 64px;
+            height: 64px;
+            border-radius: 0 24px 8px 0;
+            @media (min-width: 768px) {
+                width: 56px;
+                height: 56px;
+            }
+            @media (min-width: 1920px) {
+                width: 80px;
+                height: 80px;
+                border-radius: 0 32px 8px 0;
+            }
+            background-color: var(--gold);
+            transition: 0.5s;
+        }
+    }
+
+    &:hover {
+        .anim-button__content::before {
+            width: 100%;
+        }
+    }
+}
+
+
+.big-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+    @media (min-width: 768px) {
+        height: 56px;
+    }
+    @media (min-width: 1920px) {
+        height: 76px;
+    }
+    width: 100%;
+    cursor: pointer;
+
+    border-radius: 8px;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+
+    font-family: Onest;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 15.6px;
+    text-transform: uppercase;
+    transition: 0.5s;
+
+    @media (min-width: 1920px) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+
+    &_gold {
+        background: var(--gold);
+        color: var(--white);
+    }
+
+    &:hover {
+        border: 2px solid var(--blue);
+        background: var(--blue);
+        color: var(--white);
+    }
+
+    &:active {
+        border: 2px solid var(--blue);
+        background: var(--white);
+        color: var(--blue);
+    }
+}

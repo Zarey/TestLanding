@@ -1,0 +1,199 @@
+
+.before-footer-delimiter {
+    padding: 0;
+    border: 0;
+    margin: 0;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    // 360px
+    width: 360px;
+    padding-left: 16px;
+    padding-right: 16px;
+    @media (min-width: 768px) {
+        width: 768px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @media (min-width: 1920px) {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &::before {
+        display: block;
+        left: 16px;
+        right: 16px;
+        content: '';
+        height: 1px;
+        background-color: var(--blue-logo);
+        @media (min-width: 768px) {
+            left: 0;
+            right: 0;
+            height: 2px;
+        }
+        @media (min-width: 1920px) {
+            background-color: var(--gold);
+        }
+    }
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 74px auto;
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 10px;
+    grid-row-gap: 48px;
+    position: relative;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 88px auto;
+        padding-top: 40px;
+        column-gap: 264px;
+    }
+
+    .footer__logo {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .footer__contacts {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .footer__policy {
+        grid-area: 2 / 1 / 3 / 3;
+        @media (min-width: 768px) {
+            grid-area: 2 / 2 / 3 / 3; 
+        }
+    }
+
+    @media (min-width: 1920px) {
+        grid-template-columns: 88px 112px 334px 426px auto;
+        column-gap: 12px;
+
+        .footer__logo {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .footer__contacts {
+            grid-area: 1 / 3 / 2 / 4;
+        }
+
+        .footer__policy {
+            grid-area: 1 / 5 / 2 / 6;
+        }
+    }
+
+    .footer__logo {
+        img {
+            display: block;
+            width: 64px;
+            height: 64px;
+            @media (min-width: 768px) {
+                width: 88px;
+                height: 88px;
+            }
+        }
+    }
+
+    .footer__contacts {
+        display: flex;
+        flex-direction: column;
+        white-space: nowrap;
+        @media (min-width: 768px) {
+            padding-top: 6px;
+        }
+    }
+
+    .footer__mail,
+    .footer__phone {
+        &::before {
+            display: inline-block;
+            content: '';
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 24px;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            @media (min-width: 768px) {
+                margin-right: 16px;
+            }
+        }
+        display: flex;
+        align-items: center;
+        font-family: Onest;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.3;
+        color: var(--blue-logo);
+        &:hover {
+            color: var(--brown-dark);
+        }
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: 768px) {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+        }
+    }
+
+    .footer__mail {
+        &::before {
+            background-image: url(../icons/footer/footer-mail.svg);
+        }
+    }
+
+    .footer__phone {
+        &::before {
+            background-image: url(../icons/footer/footer-phone.svg);
+        }
+    }
+
+    .footer__policy {
+        font-family: Onest;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.2px;
+        text-align: center;
+        
+        a {
+            color: var(--blue-logo);
+            transition: 0.3s;
+            &:hover {
+                color: var(--brown-dark);
+            } 
+        }
+
+        @media (min-width: 768px) {
+            font-size: 20px;
+            line-height: 28px;
+            text-align: left;
+            padding-top: 6px;
+        }
+    }
+
+    .footer__hr {
+        border: 0;
+        margin: 0;
+        width: 88px;
+        margin: 0 auto;
+        height: 2px;
+        background: var(--gold);
+
+        margin-top: 12px;
+        margin-bottom: 12px;
+        @media (min-width: 768px) {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+}

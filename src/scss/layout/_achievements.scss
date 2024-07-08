@@ -1,0 +1,251 @@
+.achievements {
+    display: grid;
+
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+    column-gap: 24px;
+    row-gap: 16px;
+
+    margin-top: 69px;
+    @media (min-width: 768px) {
+        margin-top: 104px;
+    }
+    @media (min-width: 1920px) {
+        margin-top: 194px;
+    }
+
+    &.achievements_hide-data {
+        .achievment__value span {
+            transform: translateX(50px);
+            opacity: 0;
+        }
+        .achievment__description {
+            opacity: 0;
+        }
+    }
+}
+
+.achievement {
+    display: grid;
+    grid-template-rows: 100px auto;
+    @media (min-width: 1920px) {
+        display: block;
+        position: relative;
+        height: 240px;
+    }
+
+    .achievment__value {
+        box-sizing: border-box;
+        font-family: Onest;
+        font-size: 52px;
+        font-weight: 700;
+        line-height: 62px;
+        text-align: left;
+
+        color: var(--gold);
+        position: relative;
+        overflow: hidden;
+        padding-left: 12px;
+        padding-top: 30px;
+        padding-bottom: 12px;
+
+        @media (min-width: 1920px) {
+            position: absolute;
+            top: 0;
+            font-size: 100px;
+            line-height: 120px;
+            padding-bottom: 34px;
+            width: 100%;
+        }
+        
+        span {
+            transition: 0.7s;
+            display: inline-block;
+            opacity: 1;
+        }
+
+        &::before {
+            display: block;
+            content: '';
+            position: absolute;
+            background-color: transparent;
+            width: 119px;
+            height: 118px;
+            background-repeat: no-repeat;
+            background-image: url(../icons/pocket.svg);
+            bottom: -26px;
+            right: 10px;
+            z-index: 1;
+            @media (min-width: 1920px) {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-size: 70%;
+            }
+        }
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 200px;
+            background-color: var(--white);
+            bottom: 0;
+            right: 0;
+        }
+
+        &.achievment__value_first {
+            &::before {
+                right: -2px;
+                @media (min-width: 1920px) {
+                    background-position: bottom -33px left 76px;
+                }
+            }
+            &::after {
+                transform: rotate(40deg);
+                right: -78px;
+                bottom: -54px;
+                @media (min-width: 1920px) {
+                    right: 18px;
+                    bottom: -45px;
+                }
+            }
+            @media (min-width: 768px) {
+                transform: translateX(-9px);
+            }
+            @media (min-width: 1920px) {
+                transform: translateX(-14px);
+            }
+        }
+        &.achievment__value_second {
+            &::before {
+                right: 16px;
+                @media (min-width: 1920px) {
+                    background-position: bottom -33px left 48px;
+                }
+            }
+            &::after {
+                transform: rotate(26deg);
+                right: -54px;
+                bottom: -54px;
+                @media (min-width: 1920px) {
+                    right: 25px;
+                    bottom: -45px;
+                }
+            }
+            @media (min-width: 768px) {
+                transform: translateX(0);
+            }
+            @media (min-width: 1920px) {
+                transform: translateX(23px);
+            }
+        }
+        &.achievment__value_third {
+            &::before {
+                right: 29px;
+                @media (min-width: 1920px) {
+                    background-position: bottom -33px left 7px;
+                }
+            }
+            &::after {
+                transform: rotate(31deg);
+                right: -38px;
+                bottom: -54px;
+                @media (min-width: 1920px) {
+                    right: 65px;
+                    bottom: -33px;
+                }
+            }
+            @media (min-width: 768px) {
+                transform: translateX(13px);
+            }
+            @media (min-width: 1920px) {
+                transform: translateX(46px);
+            }
+        }
+        &.achievment__value_fourth {
+            &::before {
+                right: -15px;
+                @media (min-width: 1920px) {
+                    background-position: bottom -33px left 76px;
+                }
+            }
+            &::after {
+                transform: rotate(40deg);
+                right: -90px;
+                bottom: -54px;
+                @media (min-width: 1920px) {
+                    right: 0;
+                    bottom: -24px;
+                }
+            }
+            @media (min-width: 768px) {
+                transform: translateX(20px);
+            }
+            @media (min-width: 1920px) {
+                transform: translateX(16px);
+            }
+        }
+
+
+    }
+
+    .achievment__description {
+
+        box-sizing: border-box;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-family: Onest;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+
+        text-align: left;
+        color: var(--blue-logo);
+        opacity: 1;
+        transition: 0.7s;
+
+        @media (min-width: 768px) {
+            margin-top: 14px;
+            padding-left: 20px;
+            padding-right: 0;
+
+            // &.achievment__description_first {
+
+            // }
+            &.achievment__description_second {
+                padding-left: 26px;
+            }
+            &.achievment__description_third {
+                padding-left: 40px;
+                @media (min-width: 1920px) {
+                    padding-left: 0;
+                }
+            }
+            &.achievment__description_fourth {
+                padding-left: 51px;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            position: absolute;
+            top: 151px;
+            left: 88px;
+            width: 220px;
+
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 33.6px;
+        }
+
+    }
+
+
+
+}
+

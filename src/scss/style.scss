@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+@import "parts/_palette";
+@import "parts/_css-reset";
+@import "parts/_fonts";
+@import "parts/_icons";
+
+// layout
+@import "layout/_common";
+@import "layout/_nav";
+@import "layout/_header";
+@import "layout/_achievements";
+@import "layout/_advantages";
+@import "layout/_cards";
+@import "layout/_constact-form";
+@import "layout/_footer";
+
+
+@import "parts/_utils";
+
+
+

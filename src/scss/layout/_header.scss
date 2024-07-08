@@ -1,0 +1,360 @@
+
+.header {
+    overflow: hidden;
+    margin-top: 16px;
+    @media (min-width: 768px) {
+        display: grid;
+        column-gap: 40px;
+        grid-template-columns: 312px auto;
+        grid-template-areas: 'header__mosaic header__titles';
+    }
+    @media (min-width: 1920px) {
+        grid-template-columns: 536px auto;
+        column-gap: 136px;
+    }
+
+    // title area
+    .header__titles {
+        grid-area: header__titles;
+    }
+
+    .header__large-logo {
+        display: none;
+        @media (min-width: 1920px) {
+            display: inline-block;
+            margin-top: 71px;
+            width: 608px;
+            height: 244px;
+            background-repeat: no-repeat;
+            background-image: url(../icons/Doubler_Property.svg);
+        }
+    }
+
+    .header__title {
+        color: var(--blue);
+        font-family: Onest;
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 52px;
+
+        margin-top: 8px;
+
+        @media (min-width: 768px) {
+            font-size: 52px;
+            line-height: 62.4px;
+            margin-top: 44px;
+        }
+        @media (min-width: 1920px) {
+            display: none;
+        }
+    }
+    .header__subtitle {
+        color: var(--blue-logo);
+        font-family: Onest;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28.8px;
+
+        margin-top: 12px;
+        @media (min-width: 768px) {
+            margin-top: 23px;
+        }
+        @media (min-width: 1920px) {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 57.6px;
+            margin-top: 35px;
+        }
+    }
+    .header__delimiter {
+        position: relative;
+        width: 100%;
+        height: 16px;
+
+        margin-top: 12px;
+        @media (min-width: 768px) {
+            margin-top: 16px;
+        }
+        @media (min-width: 1920px) {
+            margin-top: 29px;
+        }
+
+        &::before,
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            background-color: var(--gold);
+        }
+        &::before {
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+        }
+        &::after {
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            margin-left: 4px;
+            width: calc(100% - 4px);
+        }
+    }
+    .header__description {
+        color: var(--brown-medium);
+        font-family: Onest;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.2px;
+
+        margin-top: 20px;
+        @media (min-width: 768px) {
+            font-size: 18px;
+            line-height: 24px;
+
+            margin-top: 32px;
+        }
+        @media (min-width: 1920px) {
+            font-size: 24px;
+            line-height: 33.6px;
+
+            margin-top: 46px;
+        }
+    }
+
+    // mosaic area
+    .header__mosaic {
+        grid-area: header__mosaic;
+        display: grid;
+        grid-template-columns: 160px auto;
+        grid-template-rows: 224px auto;
+
+        @media (max-width: 767.98px) {
+            margin-top: 25px;
+        }
+        @media (min-width: 768px) {
+            grid-template-columns: 148px auto;
+            grid-template-rows: 328px auto;
+        }
+        @media (min-width: 1920px) {
+            grid-template-columns: 260px auto;
+            grid-template-rows: 536px auto;
+        }
+
+        gap: 8px;
+        @media (min-width: 768px) {
+            gap: 16px;
+            margin-top: 24px;
+        }
+        @media (min-width: 1920px) {
+            margin-top: 52px;
+            column-gap: 15px;
+            row-gap: 12px;
+        }
+    }
+    .header__puzzle {
+        display: block;
+        background-repeat: no-repeat;
+    }
+
+
+    @keyframes expand {
+        0% {
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+        80% {
+          width: 338px;
+          height: 234px;
+        }
+        100% {
+          width: 328px;
+          height: 224px;
+          opacity: 1;
+        }
+    }
+
+    @media (min-width: 768px) {
+        @keyframes expand {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+            80% {
+                width: 322px;
+                height: 338px;
+            }
+            100% {
+                width: 312px;
+                height: 328px;
+                opacity: 1;
+            }
+        }
+    }
+
+    @media (min-width: 1920px) {
+        @keyframes expand {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+            80% {
+                width: 548px;
+                height: 548px;
+            }
+            100% {
+                width: 536px;
+                height: 536px;
+                opacity: 1;
+            }
+        }
+    }
+
+
+    @keyframes second_animation {
+        0% {
+            transform: translateX(-100%);
+        }
+        50% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes third_animation {
+        0% {
+            transform: translateY(100%);
+        }
+        50% {
+            transform: translateY(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+
+    // скругляем уголок
+    @keyframes right_border {
+        0% {
+            border-top-right-radius: 8px;
+        }
+        80% {
+            border-top-right-radius: 8px;
+        }
+        100% {
+            // border-top-right-radius: 52px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        @keyframes right_border {
+            0% {
+                border-top-right-radius: 4px;
+            }
+            80% {
+                border-top-right-radius: 4px;
+            }
+            100% {
+                // border-top-right-radius: 60px;
+            }
+        }
+    }
+
+    @media (min-width: 1920px) {
+        @keyframes right_border {
+            0% {
+                border-top-right-radius: 8px;
+            }
+            80% {
+                border-top-right-radius: 8px;
+            }
+            100% {
+                // border-top-right-radius: 100px;
+            }
+        }
+    }
+
+    .header__puzzle_first {
+        animation-name: expand, right_border;
+        animation-duration: 1.2s, 3s;
+        animation-timing-function: ease-out;
+
+        grid-area: 1/1/2/3;
+        width: 328px;
+        height: 224px;
+        border-radius: 8px 52px 8px 8px;
+        background-size: 505px;
+        background-position: -122px -286px;
+        @media (min-width: 768px) {
+            background-size: 475px;
+            background-position: -109px -160px;
+            border-radius: 4px 60px 4px 4px;
+            width: 312px;
+            height: 328px;
+        }
+        @media (min-width: 1920px) {
+            background-size: 831px;
+            background-position: -204px -303px;
+            border-radius: 8px 100px 8px 8px;
+            width: 536px;
+            height: 536px;
+        }
+    }
+    .header__puzzle_second {
+        animation-name: second_animation;
+        animation-duration: 2.5s;
+
+        grid-area: 2/1/3/2;
+        width: 160px;
+        height: 160px;
+        border-radius: 8px 8px 8px 8px;
+        background-size: 317%;
+        background-position: 35.5% 86.6%;
+        @media (min-width: 768px) {
+            background-size: 475px;
+            background-position: 33.3% 88.8%;
+            border-radius: 4px 4px 4px 4px;
+            width: 148px;
+            height: 148px;
+        }
+        @media (min-width: 1920px) {
+            background-size: 320%;
+            background-position: 36% 86.2%;
+            border-radius: 8px 8px 8px 8px;
+            width: 260px;
+            height: 260px;
+        }
+    }
+    .header__puzzle_third {
+        animation-name: third_animation;
+        animation-duration: 2s;
+
+        grid-area: 2 / 2 / 3 / 3;
+        width: 160px;
+        height: 160px;
+        border-radius: 8px 8px 8px 8px;
+        background-size: 317%;
+        background-position: 83.9% 86.6%;
+        @media (min-width: 768px) {
+            background-size: 475px;
+            background-position: 83.4% 88.8%;
+            border-radius: 4px 4px 4px 4px;
+            width: 148px;
+            height: 148px;
+        }
+        @media (min-width: 1920px) {
+            background-size: 320%;
+            background-position: 83.7% 86.2%;
+            border-radius: 8px 8px 8px 8px;
+            width: 260px;
+            height: 260px;
+        }
+    }
+}

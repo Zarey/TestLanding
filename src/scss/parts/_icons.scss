@@ -1,0 +1,36 @@
+.small-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    // .small-icon_burger
+    &_burger {
+        background-image: url(../icons/burger.svg);
+    }
+    // .small-icon_russian
+    &_russian {
+        background-image: url(../icons/russian.svg);
+    }
+    // .small-icon_english
+    &_english {
+        background-image: url(../icons/english.svg);
+    }
+    // .small-icon_instagram
+    &_instagram {
+        background-image: url(../icons/instagram.svg);
+    }
+    // .small-icon_mail
+    &_mail {
+        background-image: url(../icons/mail.svg);
+    }
+    // .small-icon_telegram
+    &_telegram {
+        background-image: url(../icons/telegram.svg);
+    }
+    // .small-icon_whatsapp
+    &_whatsapp {
+        background-image: url(../icons/whatsapp.svg);
+    }
+}
+
